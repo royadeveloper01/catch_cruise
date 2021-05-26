@@ -40,7 +40,7 @@ async function getJokes() {
     }   
 }
 
-getJokes();
+// getJokes();
 
 // Adding Event Listeners 
 button.addEventListener('click', getJokes);
