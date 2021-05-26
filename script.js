@@ -1,4 +1,4 @@
-// 
+// Targetting the DOM Elements
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
 
@@ -20,14 +20,12 @@ function toggleButton() {
     button.disabled = !button.disabled
 }
 
-// Get jokes from Joke API
+// Get jokes from Chuck Norris API
 async function getJokes() {
-    // const apiUrl = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
     const apiUrl = 'https://api.chucknorris.io/jokes/random';
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-
         let joke = data.value;
 
         // Text to Speech
@@ -39,8 +37,6 @@ async function getJokes() {
         console.log("Whoops!!!", error);
     }   
 }
-
-// getJokes();
 
 // Adding Event Listeners 
 button.addEventListener('click', getJokes);
